@@ -3,224 +3,134 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI-Assisted Development — текстовая версия</title>
+  <title>Конспекты · AIpresentation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Prata&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Unbounded:wght@600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f7f1e6;
-      --bg-soft: #fff8ed;
-      --ink: #1c1611;
-      --muted: #68584a;
-      --line: #ddcdb8;
-      --accent: #be4b1f;
+      --bg: #0b0908;
+      --line: #3b3129;
+      --text: #f8f0e4;
+      --muted: #bea58b;
+      --teal: #38d7c5;
+      --amber: #f6a54b;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      color: var(--ink);
-      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      color: var(--text);
+      font-family: "Manrope", "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at 85% 10%, #f1debe 0%, transparent 40%),
-        radial-gradient(circle at 10% 90%, #e8d4b4 0%, transparent 30%),
-        var(--bg);
-      line-height: 1.65;
+        radial-gradient(circle at 20% 10%, rgba(56, 215, 197, 0.16), transparent 34%),
+        radial-gradient(circle at 85% 90%, rgba(246, 165, 75, 0.16), transparent 35%),
+        linear-gradient(145deg, #090807 0%, #11100e 55%, #090807 100%);
     }
 
     .shell {
-      max-width: 1024px;
-      margin: 0 auto;
-      padding: 28px 20px 64px;
+      width: min(860px, 100%);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(32, 24, 20, 0.9), rgba(20, 16, 13, 0.96));
+      box-shadow: 0 22px 40px rgba(0, 0, 0, 0.34);
+      padding: clamp(18px, 3vw, 28px);
     }
 
-    .topbar {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
+    h1 {
+      margin: 0 0 8px;
+      font-family: "Unbounded", "Manrope", sans-serif;
+      font-size: clamp(24px, 4vw, 42px);
+      letter-spacing: -0.02em;
     }
 
-    .title {
-      font-family: "Prata", Georgia, serif;
+    p {
       margin: 0;
-      font-size: clamp(28px, 5vw, 42px);
-      line-height: 1.12;
+      color: var(--muted);
     }
 
-    .actions {
+    .grid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .card {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-top: 3px solid var(--teal);
+      border-radius: 14px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .card:nth-child(2) { border-top-color: var(--amber); }
+
+    .card h2 {
+      margin: 0 0 4px;
+      font-size: 19px;
+      font-family: "Unbounded", "Manrope", sans-serif;
+    }
+
+    .card p {
+      margin: 0 0 10px;
+      font-size: 14px;
+    }
+
+    .row {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
     }
 
     .btn {
-      display: inline-block;
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--ink);
-      border: 1px solid var(--line);
-      padding: 9px 12px;
-      background: var(--bg-soft);
-      border-radius: 10px;
-      transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      color: #f9f2e8;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 215, 197, 0.55);
+      background: rgba(56, 215, 197, 0.1);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 7px 11px;
     }
 
-    .btn:hover {
-      transform: translateY(-1px);
-      border-color: var(--accent);
-      color: var(--accent);
+    .btn.secondary {
+      border-color: rgba(246, 165, 75, 0.55);
+      background: rgba(246, 165, 75, 0.1);
     }
 
-    .panel {
-      border: 1px solid var(--line);
-      background: var(--bg-soft);
-      border-radius: 16px;
-      padding: clamp(16px, 3.2vw, 34px);
-      box-shadow: 0 8px 24px rgba(58, 36, 22, 0.08);
-    }
-
-    #status {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    #content h1,
-    #content h2,
-    #content h3,
-    #content h4 {
-      font-family: "Prata", Georgia, serif;
-      line-height: 1.2;
-      margin-top: 1.4em;
-      margin-bottom: 0.5em;
-    }
-
-    #content h1 {
-      margin-top: 0;
-      font-size: clamp(30px, 4.5vw, 46px);
-    }
-
-    #content h2 {
-      font-size: clamp(24px, 3.6vw, 34px);
-    }
-
-    #content h3 {
-      font-size: clamp(20px, 3vw, 27px);
-    }
-
-    #content p,
-    #content li,
-    #content td,
-    #content th {
-      font-size: 17px;
-    }
-
-    #content a {
-      color: var(--accent);
-    }
-
-    #content hr {
-      border: 0;
-      border-top: 1px solid var(--line);
-      margin: 30px 0;
-    }
-
-    #content blockquote {
-      margin: 18px 0;
-      padding: 10px 14px;
-      border-left: 4px solid var(--accent);
-      background: #f8eedf;
-      color: #4f3f31;
-    }
-
-    #content table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 18px 0;
-      overflow-x: auto;
-      display: block;
-    }
-
-    #content th,
-    #content td {
-      text-align: left;
-      border: 1px solid var(--line);
-      padding: 8px 10px;
-      vertical-align: top;
-    }
-
-    #content code {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 14px;
-      background: #f1e2cc;
-      border: 1px solid #dcc7a8;
-      border-radius: 6px;
-      padding: 0.1em 0.35em;
-    }
-
-    #content pre {
-      overflow-x: auto;
-      background: #231c16;
-      color: #f6e8cf;
-      border-radius: 12px;
-      padding: 14px;
-      border: 1px solid #3b3026;
-    }
-
-    #content pre code {
-      border: 0;
-      background: transparent;
-      color: inherit;
-      padding: 0;
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <main class="shell">
-    <div class="topbar">
-      <h1 class="title">Текстовая версия лекции</h1>
-      <div class="actions">
-        <a class="btn" href="../">Открыть презентацию</a>
-        <a class="btn" href="../part1_foundations.md">Открыть .md файл</a>
-      </div>
-    </div>
-    <article class="panel">
-      <p id="status">Загружаю markdown…</p>
-      <div id="content" hidden></div>
-    </article>
+    <h1>Текстовые конспекты</h1>
+    <p>Отдельные страницы для чтения markdown в удобном формате.</p>
+    <section class="grid">
+      <article class="card">
+        <h2>Часть 0</h2>
+        <p>Введение в вайбкодинг.</p>
+        <div class="row">
+          <a class="btn" href="../reading/part0/">Открыть</a>
+          <a class="btn secondary" href="../content/part0_vibecoding.md">Исходный .md</a>
+        </div>
+      </article>
+      <article class="card">
+        <h2>Часть 1</h2>
+        <p>AI-Assisted Development: от чата до агента.</p>
+        <div class="row">
+          <a class="btn" href="../reading/part1/">Открыть</a>
+          <a class="btn secondary" href="../content/part1_foundations.md">Исходный .md</a>
+        </div>
+      </article>
+    </section>
   </main>
-
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script>
-    const statusEl = document.getElementById("status");
-    const contentEl = document.getElementById("content");
-
-    async function renderMarkdown() {
-      try {
-        const response = await fetch("../part1_foundations.md", { cache: "no-store" });
-        if (!response.ok) {
-          throw new Error("HTTP " + response.status);
-        }
-
-        const markdown = await response.text();
-        contentEl.innerHTML = marked.parse(markdown, { gfm: true, breaks: false });
-        contentEl.hidden = false;
-        statusEl.remove();
-      } catch (error) {
-        statusEl.textContent = "Не удалось загрузить markdown. Откройте ссылку \"Открыть .md файл\".";
-        console.error(error);
-      }
-    }
-
-    renderMarkdown();
-  </script>
 </body>
 </html>

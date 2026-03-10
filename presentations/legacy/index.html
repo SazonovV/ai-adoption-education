@@ -3,6 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107242055', 'ym');
+
+    ym(107242055, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/107242055" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 <title>AI-Assisted Development: от чата до агента — основы</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/theme/black.min.css" id="theme">
@@ -52,7 +65,7 @@
 <body>
 <div class="reveal"><div class="slides">
 <section class="ts" data-background="#000"><h1>AI-Assisted Development</h1><h2>от чата до агента — основы</h2><div style="width:200px;height:3px;background:var(--c);margin:0 auto 1em"></div><p class="m">Часть 1 из 2 · Цикл: AI-инструменты для разработки</p><p class="m">Аудитория: смешанная техническая команда</p></section>
-<section><h2>Представление</h2><div class="intro"><div class="intro-photo"><img src="assets/avatar.jpg" alt="Аватар спикера" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="intro-fallback"><p>Добавьте фото по пути<br><code>assets/avatar.jpg</code></p></div></div><div class="card ca"><h3 class="accent">Кто выступает</h3><ul class="intro-points"><li>ГТЛ в направлении СиВ</li><li>Процессный менеджер во Взыскании</li><li>Человек с веником в ...кхм голове (с) по мнению коллег</li></ul></div></div></section>
+<section><h2>Представление</h2><div class="intro"><div class="intro-photo"><img src="../../assets/avatar.jpg" alt="Аватар спикера" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="intro-fallback"><p>Добавьте фото по пути<br><code>../../assets/avatar.jpg</code></p></div></div><div class="card ca"><h3 class="accent">Кто выступает</h3><ul class="intro-points"><li>ГТЛ в направлении СиВ</li><li>Процессный менеджер во Взыскании</li><li>Человек с веником в ...кхм голове (с) по мнению коллег</li></ul></div></div></section>
 <section><h2>О чём поговорим</h2><div class="cards c2"><div class="card ca"><h3 class="accent">01 · Режимы работы с AI</h3><p>От автодополнения до автономных фоновых агентов — 6 режимов</p></div><div class="card ca"><h3 class="accent">02 · Архитектура агента</h3><p>Agentic Loop, компоненты, отличие от чата</p></div><div class="card cp"><h3 class="purple">03 · Skills, Rules, Tools</h3><p>Настройка поведения, знаний и возможностей</p></div><div class="card cp"><h3 class="purple">04 · MCP, Hooks, Plugins</h3><p>Расширение, гарантии, автоматизация</p></div><div class="card cg"><h3 class="green">05 · Конфигурация проекта</h3><p>Что коммитить, структура репозитория</p></div><div class="card cg"><h3 class="green">06 · Рекомендации</h3><p>Best practices и антипаттерны</p></div></div></section>
 <section class="ss"><div class="sn">01</div><h1>Режимы работы с AI</h1><p>Спектр автономии: от минимального вмешательства до полной самостоятельности</p></section>
 <section><h2>Спектр автономии AI в разработке</h2><div class="spectrum"><div class="si" style="border-color:#155e75"><h4>Авто-дополнение</h4><p>Tab / Esc</p></div><div class="si" style="border-color:#0e7490"><h4>Чат</h4><p>Copy-paste</p></div><div class="si" style="border-color:var(--o)"><h4>Вайбкодинг</h4><p>Prompt → Code</p></div><div class="si"><h4>Агентский</h4><p>Think→Act→Observe</p></div><div class="si" style="border-color:var(--p)"><h4>Мульти-агентный</h4><p>Orchestrator</p></div><div class="si" style="border-color:var(--pk)"><h4>Background</h4><p>CI/CD, GitHub</p></div></div><table><tr><th></th><th>Автодопол.</th><th>Чат</th><th>Вайбкодинг</th><th>Агентский</th><th>Мультиагент.</th><th>Background</th></tr><tr><td><strong>Контроль</strong></td><td>Полный</td><td>Полный</td><td>Минимальный</td><td>Настраиваемый</td><td>Настраиваемый</td><td>Только ревью</td></tr><tr><td><strong>Автономия</strong></td><td>Минимальная</td><td>Нулевая</td><td>Высокая</td><td>Контролируемая</td><td>Очень высокая</td><td>Полная</td></tr><tr><td><strong>Риск</strong></td><td class="green">Минимальный</td><td class="green">Низкий</td><td class="red">Высокий</td><td class="orange">Средний</td><td class="orange">Средний</td><td class="red">Средн.-высокий</td></tr><tr><td><strong>Для</strong></td><td>Рутинный код</td><td>Точечные задачи</td><td>Прототипы</td><td>Рабочие задачи</td><td>Крупные фичи</td><td>Рутина, CI/CD</td></tr></table></section>

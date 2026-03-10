@@ -3,6 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107242055', 'ym');
+
+    ym(107242055, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/107242055" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 <title>Введение в вайбкодинг · Часть 0</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/theme/black.min.css" id="theme">
@@ -344,6 +357,107 @@ table.mini th {
   margin-bottom: 0.45em;
 }
 
+.intro-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.photo {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 7px;
+  background: #0d0a09;
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.fallback {
+  display: none;
+  text-align: center;
+  color: #b8a189;
+  font-size: 0.54em;
+}
+
+.promo-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.promo-photo-box,
+.promo-qr-box {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(36, 28, 23, 0.88), rgba(24, 18, 15, 0.95));
+  padding: 12px;
+}
+
+.promo-photo-box {
+  display: grid;
+  align-items: stretch;
+}
+
+.promo-photo-box img {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.promo-qr-box {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.promo-qr-box h3 {
+  margin: 0;
+}
+
+.promo-qr-box img {
+  width: min(320px, 100%);
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #fff;
+  padding: 8px;
+}
+
+.promo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(55, 214, 196, 0.55);
+  color: #f5eee4;
+  text-decoration: none;
+  font-size: 0.56em;
+  transition: border-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+
+.promo-link:hover {
+  color: #ffffff;
+  border-color: rgba(246, 164, 74, 0.65);
+  transform: translateY(-1px);
+}
+
 .deck-switcher {
   position: fixed;
   top: 12px;
@@ -410,7 +524,9 @@ table.mini th {
   .cards.c3,
   .grid-2,
   .tools-grid,
-  .flow {
+  .flow,
+  .intro-layout,
+  .promo-layout {
     grid-template-columns: 1fr;
   }
 
@@ -434,8 +550,8 @@ table.mini th {
   <details>
     <summary>Презентации</summary>
     <div class="deck-switcher-menu">
-      <a href="./part0.html" class="active">Часть 0 · Вайбкодинг</a>
-      <a href="./">Часть 1 · Основы</a>
+      <a href="./" class="active">Часть 0 · Вайбкодинг</a>
+      <a href="../part1/">Часть 1 · Основы</a>
     </div>
   </details>
 </nav>
@@ -456,14 +572,37 @@ table.mini th {
 
 <section>
   <div class="slide-shell">
+    <h2 class="section-title">Представление</h2>
+    <div class="intro-layout">
+      <div class="photo">
+        <img src="../../assets/avatar.jpg" alt="Аватар спикера" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="fallback">Добавьте фото по пути <code>../../assets/avatar.jpg</code></div>
+      </div>
+      <div class="card teal">
+        <h3>Кто выступает</h3>
+        <ul>
+          <li>ГТЛ в направлении СиВ</li>
+          <li>Процессный менеджер во Взыскании</li>
+          <li>ИИ Евангелист</li>
+          <li>Человек с веником в ...кхм голове (с) по мнению коллег</li>
+        </ul>
+        <p class="note">Формат: короткое введение в вайбкодинг с примерами, где он реально ускоряет работу.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="slide-shell">
     <h2 class="section-title">Содержание</h2>
     <div class="cards c3">
-      <div class="card teal"><h3>1. Что такое вайбкодинг</h3><p>Определение, почему взлетело, кто использует</p></div>
-      <div class="card amber"><h3>2. Инструменты</h3><p>Браузерные и IDE-ориентированные варианты</p></div>
-      <div class="card rose"><h3>3. Живой пример</h3><p>От промпта до работающего приложения</p></div>
-      <div class="card green"><h3>4. Где работает отлично</h3><p>Прототипы, внутренние инструменты, одноразовые задачи</p></div>
-      <div class="card teal"><h3>5. Сравнение с другими режимами</h3><p>Вайбкодинг vs агентский подход</p></div>
-      <div class="card amber"><h3>6. Практические рекомендации</h3><p>Приёмы, шаблоны запросов и следующий шаг</p></div>
+      <div class="card teal"><h3>0. Представление</h3><p>Кто выступает и в каком формате идём по материалу</p></div>
+      <div class="card amber"><h3>1. Что такое вайбкодинг</h3><p>Определение, почему взлетело, кто использует</p></div>
+      <div class="card rose"><h3>2. Инструменты</h3><p>Браузерные и IDE-ориентированные варианты</p></div>
+      <div class="card green"><h3>3. Живой пример</h3><p>От промпта до работающего приложения</p></div>
+      <div class="card teal"><h3>4. Где работает отлично</h3><p>Прототипы, внутренние инструменты, одноразовые задачи</p></div>
+      <div class="card amber"><h3>5. Сравнение с другими режимами</h3><p>Вайбкодинг vs агентский подход</p></div>
+      <div class="card rose"><h3>6. Практические рекомендации</h3><p>Приёмы, шаблоны запросов и следующий шаг</p></div>
     </div>
   </div>
 </section>
@@ -745,9 +884,27 @@ table.mini th {
     <h1>Следующий шаг: Часть 1</h1>
     <p class="hero-sub">Переход от вайбкодинга к агентскому подходу</p>
     <div class="meta-row">
-      <a class="pill" href="./">Открыть Часть 1</a>
-      <a class="pill" href="./part0_vibecoding.md">Исходный текст Part0</a>
-      <a class="pill" href="./text/">Текстовая версия Part1</a>
+      <a class="pill" href="../part1/">Открыть Часть 1</a>
+      <a class="pill" href="../../content/part0_vibecoding.md">Исходный текст Part0</a>
+      <a class="pill" href="../../reading/part0/">Текстовая версия Part0</a>
+      <a class="pill" href="../../reading/part1/">Конспект Part1</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="slide-shell">
+    <h2 class="section-title">Остаёмся на связи</h2>
+    <div class="promo-layout">
+      <div class="promo-photo-box">
+        <img src="../../assets/avatar.jpg" alt="Фото автора канала" onerror="this.style.display='none'">
+      </div>
+      <div class="promo-qr-box">
+        <h3>Telegram канал</h3>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=420x420&data=https%3A%2F%2Ft.me%2FSazonovMaybeTalks" alt="QR код на Telegram канал SazonovMaybeTalks">
+        <a class="promo-link" href="https://t.me/SazonovMaybeTalks" target="_blank" rel="noopener noreferrer">t.me/SazonovMaybeTalks</a>
+        <p class="note">Сканируйте QR или переходите по ссылке, чтобы получить материалы и обновления по следующей части.</p>
+      </div>
     </div>
   </div>
 </section>
