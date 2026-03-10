@@ -551,7 +551,7 @@ table.mini th {
     <summary>Презентации</summary>
     <div class="deck-switcher-menu">
       <a href="./" class="active">Часть 0 · Вайбкодинг</a>
-      <a href="../part1/">Часть 1 · Основы</a>
+      <a href="../part1/">Часть 1 · Основные инструменты</a>
     </div>
   </details>
 </nav>
@@ -560,7 +560,7 @@ table.mini th {
 
 <section>
   <div class="chapter-shell">
-    <span class="kicker">AI-Assisted Development</span>
+    <span class="kicker">Agentic Engineering</span>
     <h1 class="hero-title">Введение в вайбкодинг</h1>
     <p class="hero-sub">Часть 0 (вводная)</p>
     <div class="meta-row">
@@ -619,7 +619,7 @@ table.mini th {
   <div class="slide-shell">
     <h2 class="section-title">Определение</h2>
     <div class="grid-2">
-      <div class="card teal">
+      <div class="card teal fragment">
         <h3>Суть подхода</h3>
         <ul>
           <li>Пишете, что хотите получить</li>
@@ -627,7 +627,7 @@ table.mini th {
           <li>Вы проверяете, что работает, и даёте итеративные правки</li>
         </ul>
       </div>
-      <div class="card amber">
+      <div class="card amber fragment">
         <h3>Практический эффект</h3>
         <ul>
           <li>Порог входа близок к нулю</li>
@@ -636,7 +636,8 @@ table.mini th {
         </ul>
       </div>
     </div>
-    <blockquote><p>"Забудь, что код существует. Опиши, что хочешь. Если сломалось — скажи AI, что сломалось."</p></blockquote>
+    <blockquote class="fragment"><p>"Забудь, что код существует. Опиши, что хочешь. Если сломалось — скажи AI, что сломалось."</p></blockquote>
+    <p class="note fragment">Термин ввёл Андрей Карпатый — один из ведущих исследователей AI — в начале 2025 года.</p>
   </div>
 </section>
 
@@ -644,10 +645,10 @@ table.mini th {
   <div class="slide-shell">
     <h2 class="section-title">Почему это взлетело</h2>
     <div class="cards c2">
-      <div class="card teal"><h3>Низкий порог</h3><p>Не нужны глубокие знания языков и фреймворков, чтобы получить прототип.</p></div>
-      <div class="card amber"><h3>Скорость</h3><p>От идеи до демо — минуты, а не спринты.</p></div>
-      <div class="card rose"><h3>Доступность</h3><p>Запуск прямо в браузере без локальной настройки окружения.</p></div>
-      <div class="card green"><h3>Видимый результат</h3><p>Обратная связь сразу в интерфейсе, а не в документах.</p></div>
+      <div class="card teal fragment"><h3>Низкий порог</h3><p>Не нужны глубокие знания языков и фреймворков, чтобы получить прототип.</p></div>
+      <div class="card amber fragment"><h3>Скорость</h3><p>От идеи до демо — минуты, а не спринты.</p></div>
+      <div class="card rose fragment"><h3>Доступность</h3><p>Запуск прямо в браузере без локальной настройки окружения.</p></div>
+      <div class="card green fragment"><h3>Видимый результат</h3><p>Обратная связь сразу в интерфейсе, а не в документах.</p></div>
     </div>
   </div>
 </section>
@@ -656,12 +657,12 @@ table.mini th {
   <div class="slide-shell">
     <h2 class="section-title">Кто уже использует</h2>
     <div class="cards c3">
-      <div class="card teal"><h3>Стартапы</h3><p>Быстро проверяют идею до масштабных инвестиций.</p></div>
-      <div class="card amber"><h3>Продакты и менеджеры</h3><p>Делают интерактивные демо без отдельного цикла разработки.</p></div>
-      <div class="card rose"><h3>Дизайнеры</h3><p>Переходят от статичных макетов к живым прототипам.</p></div>
-      <div class="card green"><h3>Аналитики</h3><p>Собирают дашборды и визуализации данных за минуты.</p></div>
-      <div class="card teal"><h3>Разработчики</h3><p>Ускоряют внутренние утилиты и технические эксперименты.</p></div>
-      <div class="card amber"><h3>Хакатоны</h3><p>Максимальный результат при минимальном времени.</p></div>
+      <div class="card teal fragment"><h3>Стартапы</h3><p>Быстро проверяют идею до масштабных инвестиций.</p></div>
+      <div class="card amber fragment"><h3>Продакты и менеджеры</h3><p>Делают интерактивные демо без отдельного цикла разработки.</p></div>
+      <div class="card rose fragment"><h3>Дизайнеры</h3><p>Переходят от статичных макетов к живым прототипам.</p></div>
+      <div class="card green fragment"><h3>Аналитики</h3><p>Собирают дашборды и визуализации данных за минуты.</p></div>
+      <div class="card teal fragment"><h3>Разработчики</h3><p>Ускоряют внутренние утилиты и технические эксперименты.</p></div>
+      <div class="card amber fragment"><h3>Хакатоны</h3><p>Максимальный результат при минимальном времени.</p></div>
     </div>
   </div>
 </section>
@@ -680,10 +681,10 @@ table.mini th {
     <div class="table-wrap">
       <table class="mini">
         <tr><th>Инструмент</th><th>Когда полезен</th><th>Сильная сторона</th></tr>
-        <tr><td>Bolt</td><td>Быстрый прототип и публикация</td><td>Из идеи сразу в живой URL</td></tr>
-        <tr><td>v0</td><td>UI-first задачи</td><td>Сильный визуальный результат</td></tr>
-        <tr><td>Lovable</td><td>MVP с базой и авторизацией</td><td>Full-stack за один цикл</td></tr>
-        <tr><td>Replit Agent</td><td>Разные стеки и языки</td><td>Гибкость и шаринг результата</td></tr>
+        <tr class="fragment"><td>Bolt</td><td>Быстрый прототип и публикация</td><td>Из идеи сразу в живой URL</td></tr>
+        <tr class="fragment"><td>v0</td><td>UI-first задачи</td><td>Сильный визуальный результат</td></tr>
+        <tr class="fragment"><td>Lovable</td><td>MVP с базой и авторизацией</td><td>Full-stack за один цикл</td></tr>
+        <tr class="fragment"><td>Replit Agent</td><td>Разные стеки и языки</td><td>Гибкость и шаринг результата</td></tr>
       </table>
     </div>
   </div>
@@ -695,9 +696,9 @@ table.mini th {
     <div class="table-wrap">
       <table class="mini">
         <tr><th>Инструмент</th><th>Сценарий</th><th>Сильная сторона</th></tr>
-        <tr><td>Cursor Composer</td><td>Работа в существующем репозитории</td><td>Понимает контекст проекта</td></tr>
-        <tr><td>Windsurf Cascade</td><td>Сложные задачи в несколько шагов</td><td>Автодекомпозиция подзадач</td></tr>
-        <tr><td>GitHub Copilot Chat</td><td>Кодинг в привычном IDE+GitHub</td><td>Глубокая интеграция с экосистемой GitHub</td></tr>
+        <tr class="fragment"><td>Cursor Composer</td><td>Работа в существующем репозитории</td><td>Понимает контекст проекта</td></tr>
+        <tr class="fragment"><td>Claude Code</td><td>Агентская работа в терминале</td><td>Глубокий контекст проекта, автономный цикл</td></tr>
+        <tr class="fragment"><td>Continue.dev</td><td>On-premise / собственные модели</td><td>Открытый код, работа с локальными LLM</td></tr>
       </table>
     </div>
     <p class="note" style="margin-top:10px">Правило выбора: браузер — для старта и демо, IDE — для интеграции в реальный код.</p>
@@ -707,11 +708,32 @@ table.mini th {
 <section>
   <div class="slide-shell">
     <h2 class="section-title">Что выбрать: быстрый ориентир</h2>
-<pre><code class="language-text">Нужен прототип за 10 минут?        -> Bolt / Lovable
-Нужен красивый интерфейс?          -> v0
-Работаете с существующим кодом?    -> Cursor Composer
-Нужен максимальный контроль?        -> Cursor / Windsurf
-Хакатон или демо инвестору?         -> Bolt + Lovable</code></pre>
+    <div class="cards c2">
+      <div class="card teal fragment">
+        <h3>Нужен прототип за 10 минут?</h3>
+        <p><strong>Bolt / Lovable</strong> — от идеи до живого URL за минуты</p>
+      </div>
+      <div class="card amber fragment">
+        <h3>Нужен красивый интерфейс?</h3>
+        <p><strong>v0</strong> — сильный визуальный результат «из коробки»</p>
+      </div>
+      <div class="card rose fragment">
+        <h3>Работаете с существующим кодом?</h3>
+        <p><strong>Cursor Composer</strong> — понимает контекст всего проекта</p>
+      </div>
+      <div class="card green fragment">
+        <h3>Нужен максимальный контроль?</h3>
+        <p><strong>Cursor / Claude Code</strong> — агентский режим с полным доступом к проекту</p>
+      </div>
+      <div class="card teal fragment">
+        <h3>On-premise или свои модели?</h3>
+        <p><strong>Continue.dev</strong> — открытый код, работает с локальными LLM</p>
+      </div>
+      <div class="card amber fragment">
+        <h3>Хакатон или демо инвестору?</h3>
+        <p><strong>Bolt + Lovable</strong> — максимальная скорость демонстрации</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -727,11 +749,11 @@ table.mini th {
   <div class="slide-shell">
     <h2 class="section-title">Кейс: дашборд для анализа CSV</h2>
     <div class="cards c2">
-      <div class="card teal">
+      <div class="card teal fragment">
         <h3>Запрос</h3>
         <p>"Сделай дашборд для анализа CSV: загрузка файла, таблица, фильтрация, 3 графика, тёмная тема."</p>
       </div>
-      <div class="card amber">
+      <div class="card amber fragment">
         <h3>Результат за ~30 секунд</h3>
         <ul>
           <li>Загрузка файла и таблица</li>
@@ -741,6 +763,7 @@ table.mini th {
         </ul>
       </div>
     </div>
+    <p class="note fragment">CSV — обычный формат таблиц, который умеет сохранять Excel. Дашборд можно опубликовать по URL за один клик.</p>
   </div>
 </section>
 
@@ -748,11 +771,11 @@ table.mini th {
   <div class="slide-shell">
     <h2 class="section-title">Итеративный цикл вайбкодинга</h2>
     <div class="flow">
-      <div class="flow-step"><h4>Запрос 1</h4><p>Базовый интерфейс</p></div>
-      <div class="arrow">→</div>
-      <div class="flow-step"><h4>Запрос 2</h4><p>Фильтры по колонкам</p></div>
-      <div class="arrow">→</div>
-      <div class="flow-step"><h4>Запрос 3+</h4><p>Тема, оптимизация, шаринг</p></div>
+      <div class="flow-step fragment"><h4>Запрос 1</h4><p>Базовый интерфейс</p></div>
+      <div class="arrow fragment">→</div>
+      <div class="flow-step fragment"><h4>Запрос 2</h4><p>Фильтры по колонкам</p></div>
+      <div class="arrow fragment">→</div>
+      <div class="flow-step fragment"><h4>Запрос 3+</h4><p>Тема, оптимизация, шаринг</p></div>
     </div>
     <p class="note" style="margin-top:10px">Каждая итерация 10-30 секунд. Весь MVP часто укладывается в 5-15 минут.</p>
   </div>
@@ -770,12 +793,12 @@ table.mini th {
   <div class="slide-shell">
     <h2 class="section-title">Точки максимальной пользы</h2>
     <div class="cards c3">
-      <div class="card teal"><h3>Прототипы и демо</h3><p>Проверка гипотез до затрат на полноценный продукт.</p></div>
-      <div class="card amber"><h3>Внутренние инструменты</h3><p>Калькуляторы, формы, простые KPI-дашборды.</p></div>
-      <div class="card rose"><h3>Одноразовые задачи</h3><p>Скрипты, конвертации, быстрые отчёты.</p></div>
-      <div class="card green"><h3>Обучение</h3><p>Понятные наглядные примеры за короткое время.</p></div>
-      <div class="card teal"><h3>Маркетинг</h3><p>Лендинги и A/B-варианты без долгого цикла.</p></div>
-      <div class="card amber"><h3>Хакатоны</h3><p>Фокус на результате и скорости демонстрации.</p></div>
+      <div class="card teal fragment"><h3>Прототипы и демо</h3><p>Проверка гипотез до затрат на полноценный продукт.</p></div>
+      <div class="card amber fragment"><h3>Внутренние инструменты</h3><p>Калькуляторы, формы, простые KPI-дашборды.</p></div>
+      <div class="card rose fragment"><h3>Одноразовые задачи</h3><p>Скрипты, конвертации, быстрые отчёты.</p></div>
+      <div class="card green fragment"><h3>Обучение</h3><p>Понятные наглядные примеры за короткое время.</p></div>
+      <div class="card teal fragment"><h3>Маркетинг</h3><p>Лендинги и A/B-варианты без долгого цикла.</p></div>
+      <div class="card amber fragment"><h3>Хакатоны</h3><p>Фокус на результате и скорости демонстрации.</p></div>
     </div>
   </div>
 </section>
@@ -791,12 +814,12 @@ table.mini th {
 <section>
   <div class="slide-shell">
     <h2 class="section-title">Три подхода</h2>
-    <div class="tools-grid">
-      <div class="tool-box"><h3>Вайбкодинг</h3><p>"Сделай мне". Максимум скорости, минимум гарантий.</p></div>
-      <div class="tool-box"><h3>Агентский режим</h3><p>"Сделай по правилам". Контролируемые действия и ревью.</p></div>
-      <div class="tool-box"><h3>Мультиагенты</h3><p>Планирование, исполнение и проверка отдельными агентами.</p></div>
-      <div class="tool-box"><h3>Вывод</h3><p>Не конкурируют, а дополняют друг друга на разных этапах.</p></div>
+    <div class="cards c3">
+      <div class="card teal fragment"><h3>Вайбкодинг</h3><p>"Сделай мне". Максимум скорости, минимум гарантий.</p></div>
+      <div class="card amber fragment"><h3>Агентский режим</h3><p>"Сделай по правилам". Контролируемые действия и ревью.</p></div>
+      <div class="card rose fragment"><h3>Мультиагенты</h3><p>Планирование, исполнение и проверка отдельными агентами.</p></div>
     </div>
+    <blockquote class="fragment"><p>Эти подходы не конкурируют, а дополняют друг друга на разных этапах: прототип → разработка → масштабирование.</p></blockquote>
   </div>
 </section>
 
@@ -806,10 +829,10 @@ table.mini th {
     <div class="table-wrap">
       <table class="mini">
         <tr><th>Критерий</th><th>Вайбкодинг</th><th>Агентский режим</th></tr>
-        <tr><td>Контроль</td><td>Минимальный</td><td>Высокий (через правила)</td></tr>
-        <tr><td>Проверка</td><td>"Потыкали руками"</td><td>Тесты + дифф + policy</td></tr>
-        <tr><td>Повторяемость</td><td>Низкая</td><td>Высокая</td></tr>
-        <tr><td>Подходит для продакшена</td><td>Ограниченно</td><td>Да, при настроенных guardrails</td></tr>
+        <tr class="fragment"><td>Контроль</td><td>Минимальный</td><td>Высокий (через правила)</td></tr>
+        <tr class="fragment"><td>Проверка</td><td>"Потыкали руками"</td><td>Тесты + дифф + policy</td></tr>
+        <tr class="fragment"><td>Повторяемость</td><td>Низкая</td><td>Высокая</td></tr>
+        <tr class="fragment"><td>Подходит для продакшена</td><td>Ограниченно</td><td>Да, при настроенных guardrails</td></tr>
       </table>
     </div>
   </div>
@@ -819,10 +842,10 @@ table.mini th {
   <div class="slide-shell">
     <h2 class="section-title">Как повысить качество вайбкодинга</h2>
     <div class="cards c2">
-      <div class="card teal"><h3>Spec first</h3><p>Сначала попросите спецификацию, затем генерацию кода.</p></div>
-      <div class="card amber"><h3>Git checkpoints</h3><p>Фиксируйте удачные состояния после каждого шага.</p></div>
-      <div class="card rose"><h3>Без секретов</h3><p>Ключи и пароли только через <code>.env</code> и переменные окружения.</p></div>
-      <div class="card green"><h3>Self-check</h3><p>Просите AI критически проверить результат и edge-cases.</p></div>
+      <div class="card teal fragment"><h3>Spec first</h3><p>Сначала попросите AI написать спецификацию. Проверьте. Только потом — команда делать.</p></div>
+      <div class="card amber fragment"><h3>Git checkpoints</h3><p>Фиксируйте удачные состояния после каждого шага.</p></div>
+      <div class="card rose fragment"><h3>Без секретов</h3><p>Ключи и пароли только через <code>.env</code> и переменные окружения.</p></div>
+      <div class="card green fragment"><h3>Self-check</h3><p>Попросите AI проверить edge-cases: что если данных нет? Данных слишком много? Ввод некорректный?</p></div>
     </div>
   </div>
 </section>
@@ -830,11 +853,25 @@ table.mini th {
 <section>
   <div class="slide-shell">
     <h2 class="section-title">Путь: от прототипа к продукту</h2>
-<pre><code class="language-text">1. Вайбкодинг      -> быстрый прототип и проверка идеи
-2. Оценка          -> решаем, идём ли в продукт
-3. Агентский режим -> делаем «боевую» реализацию по стандартам
-4. Стандартизация  -> закрепляем rules/skills/tools для команды</code></pre>
-    <blockquote><p>Прототип полезен как наглядное ТЗ, но не как финальный production-код.</p></blockquote>
+    <div class="cards c2">
+      <div class="card teal fragment">
+        <h3>1. Вайбкодинг</h3>
+        <p>Быстрый прототип и проверка идеи за минуты</p>
+      </div>
+      <div class="card amber fragment">
+        <h3>2. Оценка</h3>
+        <p>Решаем: идём в продукт или идея не взлетела?</p>
+      </div>
+      <div class="card rose fragment">
+        <h3>3. Агентский режим</h3>
+        <p>«Боевая» реализация по стандартам, используя прототип как образец</p>
+      </div>
+      <div class="card green fragment">
+        <h3>4. Стандартизация</h3>
+        <p>Закрепляем rules / skills / tools для всей команды</p>
+      </div>
+    </div>
+    <blockquote class="fragment"><p>Прототип — это наглядное ТЗ, записанное языком работающего приложения, а не финальный production-код.</p></blockquote>
   </div>
 </section>
 
@@ -850,12 +887,12 @@ table.mini th {
   <div class="slide-shell">
     <h2 class="section-title">Когда стоит вайбкодить (чеклист)</h2>
     <ul class="checklist">
-      <li>✓ Прототип или демо для стейкхолдеров</li>
-      <li>✓ Внутренний инструмент команды</li>
-      <li>✓ Одноразовая автоматизация</li>
-      <li>✓ Быстрый эксперимент с новой технологией</li>
-      <li>✓ Лендос / маркетинговая страница</li>
-      <li>✓ Хакатон и быстрый proof-of-concept</li>
+      <li class="fragment">✓ Прототип или демо для стейкхолдеров</li>
+      <li class="fragment">✓ Внутренний инструмент команды</li>
+      <li class="fragment">✓ Одноразовая автоматизация</li>
+      <li class="fragment">✓ Быстрый эксперимент с новой технологией</li>
+      <li class="fragment">✓ Лендос / маркетинговая страница</li>
+      <li class="fragment">✓ Хакатон и быстрый proof-of-concept</li>
     </ul>
   </div>
 </section>
@@ -875,6 +912,7 @@ table.mini th {
 # Brainstorm
 "Предложи 3 варианта решения с разной сложностью и сроком."</code></pre>
     <p class="note">Чем конкретнее контекст, ограничения и критерии готовности, тем меньше итераций.</p>
+    <blockquote class="fragment"><p>Superprompt: чем больше деталей в одном сообщении (для кого, что должно уметь, как выглядеть, что НЕ нужно), тем точнее результат.</p></blockquote>
   </div>
 </section>
 
