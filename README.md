@@ -6,6 +6,7 @@
 
 - `/.github/workflows/pages.yml` — автодеплой на GitHub Pages при пуше в `main` или `master`.
 - `/index.html` — основная (новая) версия презентации.
+- `/part0.html` — презентация «Часть 0: Введение в вайбкодинг».
 - `/index_v2.html` — копия новой версии по отдельному URL.
 - `/index_legacy.html` — предыдущая версия презентации.
 - `/text/index.html` — отдельный URL с текстовой версией (рендер из `part1_foundations.md`).
@@ -16,6 +17,7 @@
 Замените `<USERNAME>` и `<REPO>`:
 
 - Презентация: `https://<USERNAME>.github.io/<REPO>/`
+- Презентация Part 0: `https://<USERNAME>.github.io/<REPO>/part0.html`
 - Презентация (v2 URL): `https://<USERNAME>.github.io/<REPO>/index_v2.html`
 - Презентация (legacy): `https://<USERNAME>.github.io/<REPO>/index_legacy.html`
 - Текстовая страница: `https://<USERNAME>.github.io/<REPO>/text/`
