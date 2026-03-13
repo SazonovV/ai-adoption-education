@@ -550,8 +550,11 @@ table.mini th {
   <details>
     <summary>Презентации</summary>
     <div class="deck-switcher-menu">
-      <a href="./" class="active">Часть 0 · Вайбкодинг</a>
-      <a href="../part1/">Часть 1 · Основные инструменты</a>
+      <a href="./" class="active">Слайды · Часть 0</a>
+      <a href="../part1/">Слайды · Часть 1</a>
+      <a href="../../reading/part0/">Конспект · Часть 0</a>
+      <a href="../../reading/part1/">Конспект · Часть 1</a>
+      <a href="../../">Главная</a>
     </div>
   </details>
 </nav>
@@ -843,10 +846,46 @@ table.mini th {
     <h2 class="section-title">Как повысить качество вайбкодинга</h2>
     <div class="cards c2">
       <div class="card teal fragment"><h3>Spec first</h3><p>Сначала попросите AI написать спецификацию. Проверьте. Только потом — команда делать.</p></div>
-      <div class="card amber fragment"><h3>Git checkpoints</h3><p>Фиксируйте удачные состояния после каждого шага.</p></div>
-      <div class="card rose fragment"><h3>Без секретов</h3><p>Ключи и пароли только через <code>.env</code> и переменные окружения.</p></div>
+      <div class="card amber fragment"><h3>Git checkpoints</h3><p>Вставьте промпт-правило для Git в начале работы — AI будет коммитить после каждого шага.</p></div>
+      <div class="card rose fragment"><h3>Без секретов</h3><p>Вставьте промпт-правило для секретов — AI будет использовать <code>.env</code> и не будет просить пароли.</p></div>
       <div class="card green fragment"><h3>Self-check</h3><p>Попросите AI проверить edge-cases: что если данных нет? Данных слишком много? Ввод некорректный?</p></div>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="slide-shell">
+    <h2 class="section-title">Промпт-правило: Git</h2>
+    <p class="note" style="margin-bottom:8px">Скопируйте и вставьте в начале работы с AI-инструментом</p>
+<pre><code class="language-text">Правила работы с Git в этом проекте:
+
+1. После каждого успешного изменения — делай git add
+   и git commit с понятным сообщением на русском.
+2. Не объединяй несколько изменений в один коммит.
+   Одна задача = один коммит.
+3. Перед рискованным изменением — сначала сделай коммит
+   текущего рабочего состояния.
+4. Если что-то сломалось — не чини поверх. Скажи мне,
+   и я сделаю git checkout -- . для отката.
+5. Не коммить .env, node_modules, dist.</code></pre>
+  </div>
+</section>
+
+<section>
+  <div class="slide-shell">
+    <h2 class="section-title">Промпт-правило: секреты</h2>
+    <p class="note" style="margin-bottom:8px">Скопируйте и вставьте в начале работы с AI-инструментом</p>
+<pre><code class="language-text">Правила работы с секретами в этом проекте:
+
+1. Никогда не вставляй пароли, токены или API-ключи
+   прямо в код. Используй переменные окружения.
+2. Все секреты — в файле .env. Я создам его сам.
+3. В коде: process.env.ИМЯ_ПЕРЕМЕННОЙ.
+4. Файл .env должен быть в .gitignore. Проверь.
+5. Если нужен ключ — не придумывай. Напиши мне,
+   какую переменную ты ожидаешь.
+6. Создай .env.example с названиями переменных
+   без значений.</code></pre>
   </div>
 </section>
 
@@ -917,15 +956,57 @@ table.mini th {
 </section>
 
 <section>
+  <div class="slide-shell">
+    <h2 class="section-title">Попробуй сам: готовые задания</h2>
+    <p class="note" style="margin-bottom:10px">Откройте bolt.new, вставьте промпт, посмотрите результат. Каждое задание — 5-10 минут.</p>
+    <div class="cards c2">
+      <div class="card teal fragment">
+        <h3>1. Таймер для стендапов</h3>
+        <p>Большой таймер на 15 мин, список участников, кнопка «следующий», мигание при истечении времени. Тёмная тема, крупный шрифт.</p>
+        <p class="note">Затем: «Добавь звук, когда остаётся 1 минута»</p>
+      </div>
+      <div class="card amber fragment">
+        <h3>2. Калькулятор стоимости проекта</h3>
+        <p>Форма: тип проекта, кол-во экранов, авторизация, БД, дизайн. Результат: стоимость, сроки, разбивка по этапам.</p>
+        <p class="note">Затем: «Добавь сравнение двух вариантов рядом»</p>
+      </div>
+      <div class="card rose fragment">
+        <h3>3. Трекер привычек</h3>
+        <p>Список привычек с галочками на 7 дней, счётчик серии, прогресс-бар. Данные в браузере, без регистрации.</p>
+        <p class="note">Затем: «Добавь переключение между неделями»</p>
+      </div>
+      <div class="card green fragment">
+        <h3>4. Генератор еженедельного отчёта</h3>
+        <p>Форма: сделано, планы, блокеры, настроение. Результат: красивый отчёт, кнопка «скопировать для Slack», история.</p>
+        <p class="note">Затем: «Добавь режим руководителя: все отчёты на одной странице»</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="slide-shell">
+    <h2 class="section-title">Как работать с заданиями</h2>
+    <div class="flow">
+      <div class="flow-step fragment"><h4>Шаг 1</h4><p>Скопируйте промпт и вставьте в bolt.new</p></div>
+      <div class="arrow fragment">→</div>
+      <div class="flow-step fragment"><h4>Шаг 2</h4><p>Посмотрите результат и попробуйте доработки</p></div>
+      <div class="arrow fragment">→</div>
+      <div class="flow-step fragment"><h4>Шаг 3</h4><p>Сохраните или сломайте — проверьте границы</p></div>
+    </div>
+    <blockquote class="fragment"><p>Цель — не идеальный результат с первого раза, а навык итеративного диалога с AI. Чем точнее промпт, тем меньше доработок.</p></blockquote>
+  </div>
+</section>
+
+<section>
   <div class="chapter-shell">
     <span class="kicker">Что дальше</span>
     <h1>Следующий шаг: Часть 1</h1>
     <p class="hero-sub">Переход от вайбкодинга к агентскому подходу</p>
     <div class="meta-row">
-      <a class="pill" href="../part1/">Открыть Часть 1</a>
-      <a class="pill" href="../../content/part0_vibecoding.md">Исходный текст Part0</a>
-      <a class="pill" href="../../reading/part0/">Текстовая версия Part0</a>
-      <a class="pill" href="../../reading/part1/">Конспект Part1</a>
+      <a class="pill" href="../part1/">Слайды · Часть 1</a>
+      <a class="pill" href="../../reading/part0/">Конспект · Часть 0</a>
+      <a class="pill" href="../../reading/part1/">Конспект · Часть 1</a>
     </div>
   </div>
 </section>
